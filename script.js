@@ -1,3 +1,4 @@
+
 let i = 0
 
 const color = () => {
@@ -27,7 +28,22 @@ const reset = () => {
     document.getElementById("counter").innerHTML = i
     color()
 }
+let pkmName
+let imgSource
+const getPkmName = () => {
+    pkmName = document.getElementById("pkmName").value
+    pkmName = pkmName.toLowerCase()
+}
 
-
-document.getElementById("counter").innerHTML = i;
-console.log(document.getElementById("counter"))
+const userAction = async () => {
+    let img = document.getElementById("pkm-img");
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon/' + pkmName);
+    try{
+    const myJson = await response.json(); //extract JSON from the http response
+    imgSource = myJson["sprites"]["front_shiny"]
+    // do something with myJson
+    img.src = imgSource
+    }catch{
+    img.src = "https://user-images.githubusercontent.com/24848110/33519396-7e56363c-d79d-11e7-969b-09782f5ccbab.png"
+    }
+}

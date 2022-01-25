@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shiny Counter</title>
+    <script
+      src="https://kit.fontawesome.com/de997d19fb.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,15 +22,22 @@
     <h1>Shiny Counter</h1>
     <p id="counter">0</p>
     <div class="container">
-      <div class="button" onclick="decrease()">
-        <p>Decrease</p>
+      <div class="button less" onclick="decrease()">
+        <p><i class="fas fa-minus-circle"></i> Decrease</p>
       </div>
-      <div class="button" onclick="increase()">
-        <p>Increase</p>
+      <div class="button plus" onclick="increase()">
+        <p><i class="fas fa-plus-circle"></i> Increase</p>
       </div>
       <div class="button" onclick="reset()">
-        <p>Reset</p>
+        <p><i class="fas fa-sync-alt"></i> Reset</p>
       </div>
+    </div>
+    <div class="pokemon">
+      <div>
+        <input type="text" id="pkmName" />
+        <button onclick="getPkmName();userAction()">Get pkm</button>
+      </div>
+      <img src="" alt="" id="pkm-img" width="200px" />
     </div>
   </body>
   <script type="text/javascript" src="./script.js" async defer></script>
